@@ -1,0 +1,44 @@
+show databases;
+
+DROP DATABASE uas;
+
+create database uas;
+
+use uas;
+
+show tables;
+
+create table credentials(emailid varchar(30), pwd varchar(30) NOT NULL, primary key(emailid));
+
+delete from credentials where emailid="admin1@gmail.com";
+
+select *from Credentials;
+
+create table student_details2(id int AUTO_INCREMENT PRIMARY KEY, firstname varchar(30) NOT NULL,lastname varchar(30) NOT NULL, emailid varchar(45) NOT NULL,DOB date NOT NULL,mn varchar(10),gender varchar(1),fathername varchar(30),fmn varchar(10),mothername varchar(30), mmn varchar(10), add1 varchar(300), add2 varchar(300), pincode varchar(6));
+
+select *from student_details2;
+
+create table educational_details(emailid varchar(50) primary key,board10 varchar(100)NOT NULL,board12 varchar(100)NOT NULL,percentage10 int NOT NULL, percentage12 int NOT NULL);
+
+select *from educational_details;
+
+create table preferences(emailid varchar(50) primary key,marks12 int not null);
+
+select *from preferences;
+
+create table preferencesforstoring(emailid varchar(50)  primary key,marks12 int not null);
+
+create table admin_credentials(emailid varchar(30), pwd varchar(30) NOT NULL, primary key(emailid));
+
+insert into admin_credentials(emailid,pwd) values ('admin1@gmail.com','1234');
+
+select * from admin_credentials;
+
+create table course_details(cid int AUTO_INCREMENT PRIMARY KEY,cbranch varchar(100) NOT NULL unique,cseats int NOT NULL,cduration int NOT NULL,csems int NOT NULL,cdescription varchar(1000));
+
+create table result_table (emailid varchar(50) primary key, branch varchar(20));
+
+create table report(id int NOT NULL AUTO_INCREMENT,emailid varchar(30) NOT NULL,phoneno varchar(12) NOT NULL, title varchar(100) NOT NULL,descrip varchar(300),primary key(id));
+
+select *from report;
+
